@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 2. Семинар</title>
+	</head>
+	<body>
+		<div class="content"></div>
+	</body>
+	<script>
+		const contentEl = document.querySelector(".content");
+
+		const btnEl = document.createElement("button");
+		btnEl.textContent = "Отправить";
+
+		contentEl.appendChild(btnEl);
+
+		let countClicks = 0;
+
+		btnEl.onclick = function () {
+			++countClicks;
+			if (countClicks === 1) {
+				btnEl.textContent = "Текст отправлен";
+			} else if (countClicks > 1) {
+				btnEl.textContent = "Текст уже был отправлен";
+			}
+			console.log(countClicks);
+		};
+	</script>
+</html>

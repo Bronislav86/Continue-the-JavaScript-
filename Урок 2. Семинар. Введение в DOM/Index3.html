@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 2. Семинар</title>
+	</head>
+	<body>
+		<div class="content"></div>
+	</body>
+	<script>
+		const divEl = document.querySelector(".content");
+		const paragrafEl = document.createElement("p");
+
+		paragrafEl.textContent = "Новый текстовый элемент";
+		divEl.appendChild(paragrafEl);
+
+		divEl.removeChild(paragrafEl);
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок2. Семинар</title>
+	</head>
+	<body>
+		<div id="block">
+			<p class="www">1</p>
+			<p class="www">2</p>
+		</div>
+	</body>
+	<script>
+		const blockEl = document.querySelector("#block");
+		console.log(blockEl);
+		const parEl = document.querySelector("#block p:first-child");
+		console.log(parEl);
+
+		const wwwEl = document.querySelector(".www:first-of-type");
+		console.log(wwwEl);
+	</script>
+</html>

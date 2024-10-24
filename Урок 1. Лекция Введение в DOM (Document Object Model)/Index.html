@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 1. Лекция</title>
+	</head>
+	<body>
+		<button class="btn">Купить</button>
+		<div class="content"></div>
+		<img src="photo.jpg" alt="photo" class="img" />
+	</body>
+
+	<script>
+		const buttonEl = document.querySelector(".btn");
+		const contentEL = document.querySelector(".content");
+		const imageEL = document.querySelector(".img");
+
+		imageEL.onclick = function () {
+			imageEL.src = "newphoto.jpg";
+		};
+
+		console.log(buttonEl);
+
+		const textEL = document.createElement("p");
+		textEL.textContent = "Тут любой текст и его много";
+
+		buttonEl.onclick = function () {
+			//console.log("Клик js");
+			buttonEl.textContent = "Товар в корзине";
+			contentEL.appendChild(textEL);
+		};
+	</script>
+</html>
