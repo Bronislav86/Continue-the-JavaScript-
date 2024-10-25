@@ -32,7 +32,7 @@ const textEl = document.createElement('p');
 const cardEl = document.querySelector('.card');
 
 textEl.textContent = 'Привет';
-cardEl.prepend(textEl);
+cardEl.insertBefore(tetxEl, cardEl.firstChild);
 
 // 8
 const titleTextEl = document.querySelector('h6');
