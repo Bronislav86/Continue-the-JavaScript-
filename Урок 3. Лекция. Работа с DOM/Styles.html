@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 3. Лекция</title>
+	</head>
+	<body>
+		<div class="content"></div>
+		<style>
+			.heading {
+				color: white;
+				text-transform: uppercase;
+				background-color: #ccc;
+				text-align: center;
+			}
+		</style>
+	</body>
+	<script>
+		const content = document.querySelector(".content");
+
+		const h1EL = document.createElement("h1");
+		h1EL.textContent = "h1 element";
+		h1EL.setAttribute("class", "heading");
+
+		const imgEl = document.createElement("img");
+		imgEl.src = "photo.png";
+		imgEl.setAttribute("alt", "крутое фото");
+
+		content.appendChild(h1EL);
+		content.appendChild(imgEl);
+	</script>
+</html>
