@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Lesson 4 - HW</title>
+	</head>
+	<body class="body">
+		<p class="dropdown">Привет :)</p>
+		<div class="dropdown">
+			<button
+				class="btn btn-secondary dropdown-toggle"
+				type="button"
+				id="dropdownMenuButton"
+				data-toggle="dropdown"
+				aria-haspopup="true"
+				aria-expanded="false"
+			>
+				Dropdown button
+			</button>
+			<div class="menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		// ---------------------1----------------------------
+		const bodyEl = document.querySelector(".body");
+		const dropDownItems = bodyEl.querySelectorAll(".dropdown-item");
+		console.log(dropDownItems);
+		dropDownItems.forEach((element) => {
+			element.classList.add("super-dropdown");
+		});
+
+		console.log(dropDownItems);
+
+		// ---------------------2----------------------------
+		const btnEls = bodyEl.querySelectorAll(".btn");
+		console.log(btnEls);
+		btnEls.forEach((btn) => {
+			if (btn.classList.contains("btn-secondary")) {
+				console.log("Еать такое, удаляем...");
+				btn.classList.remove("btn-secondary");
+			} else {
+				console.log("Ничего не нашел, придется добавить");
+				btn.classList.add("btn-secondary");
+			}
+		});
+		console.log(btnEls);
+
+		// ---------------------3----------------------------
+		const menuEl = document.querySelector(".menu");
+		console.log(menuEl);
+
+		if (menuEl) {
+			menuEl.classList.remove("dropdown-menu");
+		}
+		console.log(menuEl);
+
+		// ---------------------4----------------------------
+		const dropdownEls = document.querySelectorAll(".dropdown");
+		let divDropDownEl = NaN;
+		// const newAel = document.createElement("a");
+		// newAel.href = "#";
+		// newAel.textContent = "link";
+
+		console.log(dropDownItems);
+		console.log(divDropDownEl.tagName);
+		dropdownEls.forEach((item) => {
+			if (item.tagName === "DIV") {
+				divDropDownEl = item;
+			}
+		});
+		console.log(divDropDownEl);
+		divDropDownEl.insertAdjacentHTML("afterend", '<a href="#">link</a>');
+
+		// ---------------------5----------------------------
+		const idElement = bodyEl.querySelector("#dropdownMenuButton");
+		console.log(idElement);
+		idElement.setAttribute("id", "superDropdown");
+
+		// ---------------------6----------------------------
+		const ariaElement = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+		console.log(ariaElement);
+		ariaElement.dataset.dd = 3;
+
+		// ---------------------7----------------------------
+		let dropdownToggleEl = document.querySelector(".dropdown-toggle");
+		console.log(dropdownToggleEl);
+
+		dropdownToggleEl.removeAttribute("type");
+		console.log(dropdownToggleEl.getAttribute("type"));
+	</script>
+</html>
