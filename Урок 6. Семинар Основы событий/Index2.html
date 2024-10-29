@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<button class="button">Клик1</button>
+		<button class="button">Клик2</button>
+		<button class="button">Клик3</button>
+		<button class="button">Клик4</button>
+		<button class="button">Клик5</button>
+	</body>
+	<script>
+		const btnEls = document.querySelectorAll(".button");
+		let count = 0;
+
+		btnEls.forEach((element) => {
+			if (element.textContent === "Клик4") {
+				element.addEventListener("click", function (e) {
+					count++;
+					console.log(`На кнопку Клик4 нажали ${count} раз`);
+				});
+			} else if (element.textContent === "Клик5") {
+				element.addEventListener("click", function (e) {
+					element.textContent = "Вы нажали на эту кнопку";
+				});
+			} else {
+				element.addEventListener("click", function (e) {
+					console.log(e.target);
+				});
+			}
+		});
+	</script>
+</html>

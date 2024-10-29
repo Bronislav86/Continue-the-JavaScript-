@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<button class="button1">Клик1</button>
+		<button class="button2">Клик2</button>
+		<button class="button3">Клик3</button>
+	</body>
+	<script>
+		const btnEl1 = document.querySelector(".button1");
+		const btnEl2 = document.querySelector(".button2");
+		const btnEl3 = document.querySelector(".button3");
+		const headingEl = document.createElement("h1");
+		const bodyEl = document.querySelector("body");
+		headingEl.textContent = "Новый заголовок";
+
+		btnEl1.addEventListener("click", function (e) {
+			btnEl1.parentElement.appendChild(headingEl);
+		});
+
+		btnEl2.addEventListener("click", function (e) {
+			headingEl.remove();
+		});
+
+		btnEl3.addEventListener("mouseover", function (e) {
+			console.log("вы навели на данную кнопку");
+		});
+
+		btnEl3.addEventListener("mouseout", function (e) {
+			console.log("наведение на кнопку больше нет");
+		});
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<form action="#">
+			<input class="input" type="text" />
+			<button type="submit">Go</button>
+			<div class="error"></div>
+		</form>
+	</body>
+	<script>
+		const inputEl = document.querySelector("input");
+		const inputText = document.querySelector(".input");
+		const formEl = document.querySelector("form");
+		const errorEl = document.querySelector(".error");
+
+		inputEl.addEventListener("input", function (e) {
+			if (Number(e.target.value) === 123) {
+				console.log("Угадал");
+			} else {
+				console.log("Пока не угадал");
+			}
+		});
+
+		formEl.addEventListener("submit", (e) => {
+			if (inputEl.value === "") {
+				e.preventDefault();
+				errorEl.textContent = "Поле не должно быть пустым";
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, excepturi. Aliquid corporis, ipsam asperiores
+			et beatae doloremque quod corrupti labore.
+		</p>
+	</body>
+	<script>
+		document.addEventListener("copy", function (e) {
+			const copyText = document.getSelection().toString();
+			console.log(copyText);
+		});
+
+		window.addEventListener("resize", function (e) {
+			console.log("resize");
+		});
+	</script>
+</html>

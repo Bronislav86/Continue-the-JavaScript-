@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<button class="button">Купить1</button>
+		<button class="button">Купить2</button>
+		<button class="button">Купить3</button>
+
+		<ul class="list">
+			<li>List-1</li>
+			<li>List-2</li>
+			<li>List-3</li>
+		</ul>
+	</body>
+	<script>
+		const buttonEls = document.querySelectorAll(".button");
+		const listEl = document.querySelector(".list");
+
+		buttonEls.forEach((element) => {
+			element.addEventListener("click", function (e) {
+				const target = e.target;
+				console.log(target);
+			});
+		});
+
+		const nameFunction = (e) => {
+			console.log(e.target, e.currentTarget);
+		};
+
+		listEl.addEventListener("click", nameFunction);
+	</script>
+</html>

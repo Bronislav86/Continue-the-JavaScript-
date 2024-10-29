@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<ul class="menu">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ul>
+		<button class="button1">Add-li</button>
+		<button class="button2">Delete</button>
+		<button class="button3">Class+</button>
+	</body>
+	<script>
+		const menuEl = document.querySelector(".menu");
+		const butnEl1 = document.querySelector(".button1");
+		const butnEl2 = document.querySelector(".button2");
+		const butnEl3 = document.querySelector(".button3");
+
+		butnEl1.addEventListener("click", function (e) {
+			menuEl.insertAdjacentHTML("beforeend", '<li class="list">Новый эелемент списка</li>');
+		});
+
+		butnEl2.addEventListener("click", function (e) {
+			menuEl.firstElementChild.remove();
+		});
+
+		butnEl3.addEventListener("click", function (e) {
+			const target = e.target;
+			target.classList.add("click");
+		});
+	</script>
+</html>

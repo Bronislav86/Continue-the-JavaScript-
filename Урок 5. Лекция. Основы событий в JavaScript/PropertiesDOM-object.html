@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Урок 5. Семинар</title>
+	</head>
+	<body>
+		<button class="button">Купить</button>
+	</body>
+	<script>
+		const buttonEl = document.querySelector(".button");
+		let count = 0;
+
+		const click = function () {
+			console.log(`Click from click function ${++count} раз`);
+		};
+
+		// buttonEl.onclick = function () {
+		// 	console.log("Click js button");
+		// 	count++;
+		// 	console.log(`Кликов по кнопке ${count}`);
+		// };
+
+		// buttonEl.addEventListener("click", function (event) {
+		// 	console.log("Click add");
+		// 	console.log(event.target);
+		// });
+
+		//buttonEl.onclick = click;
+
+		buttonEl.addEventListener("click", click);
+	</script>
+</html>
