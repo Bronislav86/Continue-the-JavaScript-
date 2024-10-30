@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Homework 5</title>
+	</head>
+	<body>
+		<p class="super_element">Привет</p>
+		<img src="https://www.pngwing.com/ru/free-png-dkcmg" alt="" />
+		<img src="https://www.pngwing.com/ru/free-png-zxulc" alt="" />
+		<img src="https://placeimg.com/50/50/nature" alt="" />
+		<img src="https://placeimg.com/50/50/people" alt="" />
+		<img src="https://placeimg.com/50/50/tech" alt="" />
+		<img src="https://placeimg.com/50/50/tech/grayscale" alt="" />
+		<img src="https://placeimg.com/50/50/tech/sepia" alt="" />
+		<br />
+		<button>Кнопка</button>
+		<button class="super_element">Кнопка с классом btn</button>
+		<button>Кнопка</button>
+		<br />
+		<textarea></textarea>
+		<br />
+		<ul>
+			<li>
+				<button>Кнопка 1</button>
+			</li>
+			<li>
+				<button>Кнопка 2</button>
+			</li>
+			<li>
+				<button>Кнопка 3</button>
+			</li>
+			<li>
+				<button>Кнопка 4</button>
+			</li>
+		</ul>
+	</body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function (e) {
+			console.log("все теги прогрузились");
+		});
+
+		window.addEventListener("load", function (e) {
+			console.log("страница загрузилась");
+		});
+
+		const documentEl = document.querySelector("document");
+
+		document.addEventListener("click", function (e) {
+			const target = e.target;
+			if (target.classList.contains("super_element")) {
+				console.log(`Класс "super_element" присутствует в элементе ${target.tagName.toLowerCase()}`);
+			} else {
+				console.log(`Класс "super_element" отсутствует в элементе "${target.tagName.toLowerCase()}"`);
+			}
+		});
+
+		const textAreaEl = document.querySelector("textarea");
+
+		textAreaEl.addEventListener("mouseover", function (e) {
+			console.log("Вы навели на textarea");
+		});
+
+		const ulEl = document.querySelector("ul");
+
+		ulEl.addEventListener("click", function (e) {
+			const target = e.target;
+			if (target.tagName === "BUTTON") {
+				console.log(target.textContent);
+			}
+		});
+
+		const liElements = document.querySelectorAll("ul li");
+		console.log(liElements);
+		liElements.forEach((li, index) => {
+			if (index % 2 === 1) {
+				li.style.backgroundColor = "lightgrey";
+			}
+		});
+	</script>
+</html>
