@@ -7,9 +7,9 @@
 	</head>
 	<body>
 		<ul class="menu">
-			<li>Item 1</li>
-			<li>Item 2</li>
-			<li>Item 3</li>
+			<li class="list">Item 1</li>
+			<li class="list">Item 2</li>
+			<li class="list">Item 3</li>
 		</ul>
 		<button class="button1">Add-li</button>
 		<button class="button2">Delete</button>
@@ -25,9 +25,25 @@
 			menuEl.insertAdjacentHTML("beforeend", '<li class="list">Новый эелемент списка</li>');
 		});
 
+		/*
+  		butnEl1.addEventListener("click", function(e) {
+    		const listEl = document.createElement("li");
+      		listEl.textXontent = "Новый элемент";
+		listEl.classList.add("list");
+		menuEl.appendChild(listEl);
+		}
+    		*/
+
 		butnEl2.addEventListener("click", function (e) {
 			menuEl.firstElementChild.remove();
 		});
+	
+		/*
+		butnEl2.addEventListener("click", function (e) {
+			const firatListEl = document.querySelector(".list:first-child");
+			menuEl.removeChild(firstListEl);
+		});
+  		*/
 
 		butnEl3.addEventListener("click", function (e) {
 			const target = e.target;
