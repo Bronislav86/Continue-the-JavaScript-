@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson 8 HW</title>
+	</head>
+	<body>
+		<div class="box__content">
+			<form action="#" class="form">
+				<p><input type="radio" id="1" name="drink" value="chai" class="radio" />Чай</p>
+				<p><input type="radio" id="2" name="drink" value="kofe" class="radio" />Кофе</p>
+				<p><input type="submit" value="Выбрать" class="choise" /></p>
+			</form>
+		</div>
+	</body>
+	<script>
+		const formEl = document.querySelector(".form");
+		const radioBtS = formEl.querySelectorAll(".radio");
+		const choiseEl = formEl.querySelector(".choise");
+		const alertEl = document.createElement("p");
+		alertEl.textContent = "Нужно выбрать напиток";
+
+		choiseEl.addEventListener("click", function (e) {
+			radioBtS.forEach((element) => {
+				if (element.checked) {
+					alertEl.textContent = `${element.parentElement.textContent} закончился`;
+					formEl.appendChild(alertEl);
+					e.preventDefault();
+				} else {
+					formEl.appendChild(alertEl);
+					e.preventDefault();
+				}
+			});
+		});
+
+		radioBtS.forEach((element) => {
+			element.addEventListener("change", function (e) {
+				if (element.checked) {
+					alertEl.textContent = `${element.parentElement.textContent} закончился`;
+					formEl.appendChild(alertEl);
+					e.preventDefault();
+				} else {
+					formEl.appendChild(alertEl);
+					e.preventDefault();
+				}
+			});
+		});
+	</script>
+</html>

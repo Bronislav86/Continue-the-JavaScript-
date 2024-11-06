@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson 8 HW</title>
+	</head>
+	<body>
+		<form class="form" action="#">
+			<input class="input" type="checkbox" id="check" />
+			<label class="label" for="check">Согласен с условиями</label>
+			<div class="error">&nbsp;</div>
+			<button type="submit" class="button">Отправить</button>
+		</form>
+	</body>
+	<script>
+		const formEl = document.querySelector(".form");
+		const inputEl = formEl.querySelector(".input");
+		const labelEl = formEl.querySelector(".label");
+		const buttonEl = formEl.querySelector(".button");
+		const error = formEl.querySelector(".error");
+
+		buttonEl.addEventListener("click", function (e) {
+			if (inputEl.checked) {
+				console.log("Данные успешно отправлены");
+				labelEl.style.color = "black";
+				error.textContent = "";
+			} else {
+				labelEl.style.color = "red";
+				error.textContent = "Сначала необходимо согласиться с условиями";
+				e.preventDefault();
+			}
+		});
+	</script>
+</html>

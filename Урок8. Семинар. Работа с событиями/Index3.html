@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson 8 HW</title>
+	</head>
+	<body>
+		<form action="#" class="form">
+			<input type="password" class="pasw" placeholder="Введите пароль" />
+			<input type="submit" value="Отправить" />
+		</form>
+	</body>
+	<script>
+		const formEl = document.querySelector(".form");
+		const pswEl = formEl.querySelector(".pasw");
+		const alertEl = document.createElement("h3");
+		alertEl.textContent = "Пароль неверный";
+
+		pswEl.addEventListener("input", function (e) {
+			if (pswEl.value === "пароль") {
+				pswEl.style.background = "lightgreen";
+				pswEl.style.border = "2px solid black";
+				alertEl.textContent = "Пароль совпадает";
+				formEl.appendChild(alertEl);
+			} else {
+				pswEl.style.outline = "none";
+				pswEl.style.border = "2px solid red";
+				pswEl.style.placeholder = "пароль неверный";
+				formEl.appendChild(alertEl);
+			}
+		});
+	</script>
+</html>
