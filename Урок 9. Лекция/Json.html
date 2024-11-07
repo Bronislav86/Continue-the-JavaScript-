@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="product">
+			<img src="photo.jpg" alt="photo" class="product__img" />
+			<div class="product__content">
+				<a href="product.html" class="product__name">Название товара</a>
+				<p class="product__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<p class="product__price">55</p>
+			</div>
+		</div>
+		<div class="product">
+			<img src="photo.jpg" alt="photo" class="product__img" />
+			<div class="product__content">
+				<a href="product.html" class="product__name">Название товара</a>
+				<p class="product__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<p class="product__price">55</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		const productData = [
+			{
+				name: "Назавние товара obj",
+				price: 80,
+			},
+			{
+				name: "Назавние товара obj 2",
+				price: 50,
+			},
+		];
+
+		const productNameLink = document.querySelector(".product__name");
+		const productPrice = document.querySelector(".product__price");
+
+		productNameLink.textContent = productData.name;
+		productPrice.textContent = productData.price;
+	</script>
+</html>
