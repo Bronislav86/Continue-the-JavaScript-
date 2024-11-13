@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="data.js"></script>
+		<style>
+			.content {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				gap: 26px;
+			}
+
+			.animal {
+				box-sizing: border-box;
+				max-width: 532px;
+				border: 1px solid #000;
+				padding: 16px;
+			}
+
+			.animal__title {
+				text-align: center;
+			}
+
+			.animal__img {
+				max-width: 500px;
+				max-height: 350px;
+			}
+
+			.animal__desc {
+				text-align: center;
+				color: lightslategray;
+				size: 26px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content"></div>
+		<img src="" alt="" />
+	</body>
+	<script>
+		const data = JSON.parse(datainfo);
+
+		const content = document.querySelector(".content");
+
+		console.log(data);
+
+		data.forEach((element) => {
+			const animalBox = document.createElement("div");
+			animalBox.classList.add("animal");
+
+			const title = document.createElement("h2");
+			title.classList.add("animal__title");
+			title.textContent = element.id;
+
+			const image = document.createElement("img");
+			image.classList.add("animal__img");
+			image.alt = "cats photo";
+			image.src = element.url;
+
+			const description = document.createElement("p");
+			description.classList.add("animal__desc");
+			description.textContent = `This picture have width: ${element.width}, and height: ${element.height}`;
+
+			content.appendChild(animalBox);
+			animalBox.appendChild(title);
+			animalBox.appendChild(image);
+			animalBox.appendChild(description);
+		});
+	</script>
+</html>
