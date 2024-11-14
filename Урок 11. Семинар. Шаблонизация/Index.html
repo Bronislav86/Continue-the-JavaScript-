@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson 11</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: "Lato", serif;
+				font-weight: 400;
+				font-style: normal;
+			}
+
+			.content {
+				padding: 16px;
+				display: flex;
+				flex-direction: column;
+				gap: 40px;
+			}
+			.product-box {
+				max-width: 652px;
+				max-height: 306px;
+				display: flex;
+				flex-direction: row;
+				box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
+				box-sizing: border-box;
+				position: relative;
+			}
+			.product-box__svg {
+				position: absolute;
+				top: 28px;
+				right: 22px;
+			}
+			.description {
+				padding: 22px 97px 62px 31px;
+				background-color: white;
+				text-align: left;
+				gap: 5px;
+				position: relative;
+			}
+
+			.description__title {
+				color: rgb(34, 34, 34);
+				font-size: 24px;
+				font-weight: 400;
+				line-height: 29px;
+				width: 262px;
+				margin-bottom: 37px;
+			}
+
+			.description__text {
+				color: rgb(111, 110, 110);
+				font-size: 22px;
+				font-weight: 400;
+				line-height: 26px;
+			}
+
+			.description__span {
+				color: rgb(239, 91, 112);
+			}
+
+			.description__input {
+				border: 1px solid rgb(234, 234, 234);
+				width: 44px;
+				height: 25px;
+				position: absolute;
+				top: 193px;
+				right: 193px;
+				text-align: center;
+				padding-left: 8px;
+				padding-right: 8px;
+				color: rgb(101, 101, 101);
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 22px;
+				letter-spacing: 0%;
+			}
+
+			.description__input::placeholder {
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<!-- <div class="product-box">
+				<img src="./Product_photo_1.png" alt="product photo" class="product-box__img" />
+				<div class="description">
+					<h3 class="description__title">MANGO PEOPLE<br />T-SHIRT</h3>
+					<p class="description__text">Price:<span class="description__text description__span"> $300</span></p>
+					<p class="description__text">Color: Red</p>
+					<p class="description__text">Size: Xl</p>
+					<p class="description__text">Quantity:</p>
+					<input class="description__input" type="text" value="2" />
+				</div>
+			</div> -->
+		</div>
+	</body>
+	<script src="data.js"></script>
+	<script>
+		const data = JSON.parse(dataInfo);
+		const contentEl = document.querySelector(".content");
+
+		data.forEach((element) => {
+			const productEl = document.createElement("div");
+			productEl.classList.add("product-box");
+
+			const productImg = document.createElement("img");
+			productImg.classList.add("product-box__img");
+			productImg.src = element.url;
+
+			const descriptionEl = document.createElement("div");
+			descriptionEl.classList.add("description");
+
+			const descriptionTitle = document.createElement("h3");
+			descriptionTitle.classList.add("description__title");
+			descriptionTitle.textContent = element.name;
+
+			const descriptionPrice = document.createElement("p");
+			descriptionPrice.classList.add("description__text");
+			descriptionPrice.textContent = "Price: ";
+
+			const descriptionPriceSpan = document.createElement("span");
+			descriptionPriceSpan.classList.add("description__text");
+			descriptionPriceSpan.classList.add("description__span");
+			descriptionPriceSpan.textContent = element.price;
+
+			const descriptionColor = document.createElement("p");
+			descriptionColor.classList.add("description__text");
+			descriptionColor.textContent = `Color: ${element.color}`;
+
+			const descriptionSize = document.createElement("p");
+			descriptionSize.classList.add("description__text");
+			descriptionSize.textContent = `Size: ${element.size}`;
+
+			const descriptionQuantity = document.createElement("p");
+			descriptionQuantity.classList.add("description__text");
+			descriptionQuantity.textContent = `Quantity: `;
+
+			const descriptionInput = document.createElement("input");
+			descriptionInput.classList.add("description__input");
+			descriptionInput.setAttribute("type", "text");
+			descriptionInput.value = element.quantity;
+
+			contentEl.appendChild(productEl);
+			productEl.appendChild(productImg);
+			productEl.appendChild(descriptionEl);
+			descriptionEl.appendChild(descriptionTitle);
+			descriptionEl.appendChild(descriptionPrice);
+			descriptionPrice.appendChild(descriptionPriceSpan);
+			descriptionEl.appendChild(descriptionColor);
+			descriptionEl.appendChild(descriptionSize);
+			descriptionEl.appendChild(descriptionQuantity);
+			descriptionEl.appendChild(descriptionInput);
+		});
+	</script>
+</html>
