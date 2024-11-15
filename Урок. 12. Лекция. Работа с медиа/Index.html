@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<audio
+			class="audio"
+			preload="auto"
+			controls
+			src="https://rus.hitmotop.com/get/music/20220603/ANNA_ASTI_-_Po_baram_74376135.mp3"
+		></audio>
+	</body>
+	<script>
+		const audio = document.querySelector(".audio");
+
+		audio.addEventListener("play", function (e) {
+			console.log("Вы нажали плэй");
+		});
+	</script>
+</html>
